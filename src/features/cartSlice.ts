@@ -2,6 +2,7 @@ import { Product } from "@/types/products";
 import { bindActionCreators, createSlice } from "@reduxjs/toolkit";
 import { store } from "./store";
 
+
 type ProductState = {
     cartItems: Array<Product>,
     totalQuantity: Number,
@@ -22,7 +23,7 @@ const CartSlice = createSlice({
             const addItem = state.cartItems.find(
                 (Cartitem) => Cartitem.id === action.payload.id
             );
-            addItem ? (addItem.quantity = addItem.quantity + 1) : state.cartItems.push({...action.payload, quantity: 1});
+            addItem ? (addItem.quantity = addItem.quantity + 1 ) : state.cartItems.push({...action.payload, quantity: 1});
             
         },
         increase: (state, action) => {

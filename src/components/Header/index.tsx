@@ -2,7 +2,6 @@ import React from "react";
 import { HeaderContainer, NavContainer, Logo } from "./styles";
 
 import SideBar from "../SideBar";
-import { CartButton } from "../SideBar/styles";
 
 export const Header = () => {
   return (

@@ -20,7 +20,8 @@ import {
   getCartTotal,
   initialState,
   clear,
-} from "@/features/cartSlice";
+} from "../../features/cartSlice";
+
 interface ButtonProps {
   cartOpen: boolean;
 }
@@ -57,7 +58,6 @@ const SideBar: React.FC<ButtonProps> = ({ cartOpen }) => {
                 <img src={product.photo} width={75} height={70} />
                 <span>{product.name}</span>
                 <div className="quantity-container">
-                  {/* <p>Qtd:</p> */}
                   <ProductQuantity>
                     <button
                       className="minor"

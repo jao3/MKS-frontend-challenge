@@ -156,6 +156,13 @@ export const CartProducts = styled.div`
 export const ProductPrice = styled.span`
     font-size: 15px;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+        padding: 10px;
+        background-color: #373737;
+        color: var(--white);
+        border-radius: 5px;
+    }
     
 `;
 
@@ -166,9 +173,7 @@ export const ProductQuantity = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-    span{
-        
-    }
+    
     button{
         border: none;
         outline: none;

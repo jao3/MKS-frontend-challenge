@@ -4,16 +4,14 @@ import { useState, useEffect } from "react";
 import api from "@/services/api";
 import { Header } from "@/components/Header";
 import Home from "./home";
-const index: React.FC = () => {
-  const [product, setProduct] = useState([]);
-  useEffect(() => {
-    api
-      .get("products?page=1&rows=8&sortBy=id&orderBy=DESC")
-      .then((response) => {
-        setProduct(response.data.products);
-      });
-  }, []);
 
+const index: React.FC = () => {
+  const [isLoading, setIsloading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsloading(false);
+    }, 1000);
+  }, []);
   return (
     <>
       <Head>
@@ -23,7 +21,7 @@ const index: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Home />
+        <Home isloading={isLoading} />
       </main>
     </>
   );
