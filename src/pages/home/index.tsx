@@ -5,8 +5,6 @@ import { Content } from "./styles";
 import Footer from "@/components/Footer";
 
 const Home: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
     <>
       <Header />

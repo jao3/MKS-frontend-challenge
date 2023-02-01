@@ -36,6 +36,7 @@ export const Card = styled.div`
         color: white;
         font-weight: 700;
         border-radius: 5px;
+        
     }
     img{
         object-fit: contain;

@@ -6,12 +6,6 @@ import { Header } from "@/components/Header";
 import Home from "./home";
 
 const index: React.FC = () => {
-  const [isLoading, setIsloading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsloading(false);
-    }, 1000);
-  }, []);
   return (
     <>
       <Head>
@@ -21,7 +15,7 @@ const index: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Home isloading={isLoading} />
+        <Home />
       </main>
     </>
   );
