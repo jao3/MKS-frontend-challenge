@@ -3,10 +3,9 @@ interface ButtonProps {
     cartOpen: boolean;
   }
 
-export const SideContainer = styled.div<ButtonProps>`
+export const SideContainer = styled.aside<ButtonProps>`
     
     position: fixed;
-    
     top: 0;
     bottom: 0;
     right: 0;
@@ -17,6 +16,10 @@ export const SideContainer = styled.div<ButtonProps>`
     box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.25);
     opacity: ${props => (props.cartOpen ? "1" : "0")};
     visibility: ${props => (props.cartOpen ? "visible" : "hidden")};
+    transform: ${props => (props.cartOpen ? "translateX(0%)" : "translateX(110%)")};
+    transition: all 0.5s;
+
+    
     @media (max-width: 768px) {
         padding: 20px;
         width: min(85vw, 480px);
@@ -115,6 +118,7 @@ export const CartProducts = styled.div`
     width: 100%;
     border-radius: 8px;
     position: relative;
+    
     
     .quantity-container{
         display: flex;

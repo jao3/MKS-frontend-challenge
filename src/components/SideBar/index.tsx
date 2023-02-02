@@ -51,42 +51,44 @@ const SideBar: React.FC<ButtonProps> = ({ cartOpen }) => {
             </div>
             <span onClick={handleCLick}>x</span>
           </SideHeader>
+          <div className="overflow-container">
+            <SideProducts>
+              {cartItems.map((product) => (
+                <CartProducts key={product.id}>
+                  <img src={product.photo} width={75} height={70} />
+                  <span>{product.name}</span>
+                  <div className="quantity-container">
+                    <ProductQuantity>
+                      <button
+                        className="minor"
+                        onClick={() => dispatch(decrease(product))}
+                      >
+                        -
+                      </button>
+                      <span>{product.quantity}</span>
+                      <button
+                        className="plus"
+                        onClick={() => dispatch(increase(product))}
+                      >
+                        +
+                      </button>
+                    </ProductQuantity>
 
-          <SideProducts>
-            {cartItems.map((product) => (
-              <CartProducts key={product.id}>
-                <img src={product.photo} width={75} height={70} />
-                <span>{product.name}</span>
-                <div className="quantity-container">
-                  <ProductQuantity>
-                    <button
-                      className="minor"
-                      onClick={() => dispatch(decrease(product))}
-                    >
-                      -
-                    </button>
-                    <span>{product.quantity}</span>
-                    <button
-                      className="plus"
-                      onClick={() => dispatch(increase(product))}
-                    >
-                      +
-                    </button>
-                  </ProductQuantity>
+                    <ProductPrice>
+                      R${product.price * product.quantity}
+                    </ProductPrice>
+                  </div>
+                  <button
+                    className="remove"
+                    onClick={() => dispatch(clear(product.id))}
+                  >
+                    x
+                  </button>
+                </CartProducts>
+              ))}
+            </SideProducts>
+          </div>
 
-                  <ProductPrice>
-                    R${product.price * product.quantity}
-                  </ProductPrice>
-                </div>
-                <button
-                  className="remove"
-                  onClick={() => dispatch(clear(product.id))}
-                >
-                  x
-                </button>
-              </CartProducts>
-            ))}
-          </SideProducts>
           <TotalContainer>
             <span>Total:</span>
             <span>R${cart.totalPrice}</span>

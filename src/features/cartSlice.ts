@@ -1,7 +1,7 @@
 import { Product } from "@/types/products";
 import { bindActionCreators, createSlice } from "@reduxjs/toolkit";
 import { store } from "./store";
-
+import { ShowToast } from "../components/Toast";
 
 type ProductState = {
     cartItems: Array<Product>,
@@ -25,6 +25,7 @@ const CartSlice = createSlice({
             );
             addItem ? (addItem.quantity = addItem.quantity + 1 ) : state.cartItems.push({...action.payload, quantity: 1});
             
+            ShowToast({type: 'success', message: `${action.payload.name} adicionado ao carrinho`})
         },
         increase: (state, action) => {
             

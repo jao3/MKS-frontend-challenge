@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "@/components/ProductCard";
 import { Header } from "@/components/Header";
+import { ToastContainer } from "react-toastify";
 
 import Footer from "@/components/Footer";
 import styled from "styled-components";
